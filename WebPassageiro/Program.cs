@@ -1,11 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using WebPassageiro.Data.Context;
+using WebPassageiro.Data.Repository;
+using WebPassageiro.Data.Repository.Interface;
+using WebPassageiro.Service.Service;
+using WebPassageiro.Service.Service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DbContexto>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPassageiroRepository, PassageiroRepository>();
+builder.Services.AddScoped<IPassageiroService, PassageiroService>();
 
 var app = builder.Build();
 

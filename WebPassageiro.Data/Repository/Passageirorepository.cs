@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebPassageiro.Data.Context;
 using WebPassageiro.Data.Repository.Interface;
 using WebPassageiro.Dominio.Dominio;
 
 namespace WebPassageiro.Data.Repository
 {
-    public class Passageirorepository : IPassageiroRepository
+    public class PassageiroRepository : IPassageiroRepository
     {
+        private readonly DbContexto _db;
+
+        public PassageiroRepository(DbContexto db)
+        {
+            _db = db;
+        }
+
         public void AdicionarPassageiro(Passageiro passageiro)
         {
-            throw new NotImplementedException();
+            _db.Add(passageiro);
+            _db.SaveChanges();
         }
     }
 }
