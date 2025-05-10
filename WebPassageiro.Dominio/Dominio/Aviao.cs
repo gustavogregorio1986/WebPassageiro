@@ -20,6 +20,8 @@ namespace WebPassageiro.Dominio.Dominio
 
         public string? Destino { get; set; }
 
+        public int Status { get; set; }
+
         public Guid passageiroId { get; set; }
 
         public Passageiro? Passageiro { get; set; }

@@ -1,5 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WebPassageiro.Models.PassageiroView
+
 @{
+    ViewData["Title"] = "Cadastro de Passageiro";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4 border-0">
+        <div class="card-header bg-primary text-white rounded-top-4">
+            <h4 class="mb-0">
+                <i class="bi bi-person-fill me-2"></i>Cadastro de Passageiro
+            </h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Salvar" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label asp-for="NomePassageiro" class="form-label">Nome do Passageiro</label>
+                    <input asp-for="NomePassageiro" class="form-control rounded-3" placeholder="Digite o nome completo" />
+                    <span asp-validation-for="NomePassageiro" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cpf" class="form-label">CPF</label>
+                    <input asp-for="Cpf" class="form-control rounded-3" placeholder="Digite o CPF" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cidade" class="form-label">Cidade</label>
+                    <input asp-for="Cidade" class="form-control rounded-3" placeholder="Digite a cidade de origem" />
+                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label">Status</label>
+                    <select asp-for="Status" class="form-select rounded-3 shadow-sm">
+                        <option disabled selected>Selecione o status</option>
+                        <option value="1">Ativo</option>
+                        <option value="0">inativo</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg rounded-3">
+                        <i class="bi bi-send-fill me-2"></i>Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 }

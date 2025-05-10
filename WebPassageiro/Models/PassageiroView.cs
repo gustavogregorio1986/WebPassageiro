@@ -12,6 +12,7 @@ namespace WebPassageiro.Models
 
         public string? Cidade { get; set; }
 
+        public int Status { get; set; }
 
         public AviaoView? AviaoView { get; set; }
     }

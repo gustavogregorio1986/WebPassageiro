@@ -14,6 +14,8 @@
 
         public string? Destino { get; set; }
 
+        public int Status { get; set; }
+
         public Guid passageiroId { get; set; }
 
         public PassageiroView? PassageiroView { get; set; }

@@ -16,6 +16,8 @@ namespace WebPassageiro.Dominio.Dominio
 
         public string? Cidade { get; set; }
 
+        public int Status { get; set; }
+
 
         public Aviao? Aviao { get; set; }
     }
