@@ -18,6 +18,16 @@ namespace WebPassageiro.Controllers
             return View();
         }
 
+        public IActionResult Privacidade()
+        {
+            return View();
+        }
+
+        public IActionResult Contato()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
